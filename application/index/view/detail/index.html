@@ -1,0 +1,292 @@
+{include file="public/header"  /}
+
+{include file="public/nav"  /}
+
+<div class="p-detail">
+        <div class="p-bread-crumb">
+            <div class="w-bread-crumb">
+                <ul class="crumb-list">
+                    <li class="crumb"><a>团购</a><span class="ico-gt">&gt;</span></li>
+                    <li class="crumb"><a>{$catName}</a><span class="ico-gt">&gt;</span></li>
+                    <li class="crumb crumb-last"><a>{$deal.name}</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="static-hook-real static-hook-id-5"></div>
+        <div class="p-item-info">
+            <div class="w-item-info">
+                <h2>{$deal.name}</h2>
+                <div class="item-title">
+                    <span class="text-main">{$deal.description}</span>
+                </div>
+                <div class="ii-images static-hook-real static-hook-id-6">
+                    <div class="w-item-images">
+                        <div class="images-board">
+                            <div class="item-status ">
+                                <span class="ico-status ico-jingxuan"></span>
+                            </div>
+                            <img src="{$deal.image}" class="item-img-large" />
+                        </div>
+                        <ul class="images-list clearfix">
+                            <li class="images images-last">
+                                <img src="{$deal.image}" />
+                            </li>
+                        </ul>
+                        <div class="erweima-share-collect">
+                            <ul class="item-option clearfix">
+                                <li class=" ">
+                                    
+                                    <div class="collect-success">
+                                        
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="ii-intro">
+                    <div class="w-item-intro">
+                        <div class="price-area-wrap static-hook-real static-hook-id-8">
+                            <div class="price-area has-promotion-icon">
+                                <div class="pic-price-area">
+                                    <span class="unit">¥</span>
+                                    <span class="priceNum">{$deal.current_price}</span>
+                                </div>
+                                
+                                <div class="market-price-area">
+                                    <div class="price">¥{$deal.origin_price}</div>
+                                    <div class="name">价值</div>
+                                </div>
+                                
+                                
+                            </div>
+                        </div>
+                        <div class="static-hook-real static-hook-id-9">
+                            <a class="link jingxuan-box" alt="更多精选品牌特惠">
+                                <div class="box">
+                                    
+                                    <div class="jx-update" id="j-jxUpdateTime">
+                                        <span class="time-title"></span>
+                                        <span class="jx-timerbox"></span>
+
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <ul class="ugc-strategy-area static-hook-real static-hook-id-10">
+                            <li class="item-bought">
+                                <div class="sl-wrap">
+                                    <div class="sl-wrap-cnt">
+                                        <div class="item-bought-num"><span class="intro-strong">{$deal.buy_count}</span>人已团购</div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="buy-panel-wrap">
+                            <div class="buy-panel">
+                                <div class="validdate-buycount-area static-hook-real static-hook-id-11">
+                                    <div class="item-countdown-row">
+                                        <span class="name">有效期</span>
+                                        <span class="value">{$deal.end_time|date='Y-m-d H:m:s',###}</span>
+                                    </div>
+                                    <div class="item-buycount-row j-item-buycount-row">
+                                        <div class="name">数&nbsp;&nbsp;&nbsp;&nbsp;量</div>
+                                        <div class="buycount-ctrl">
+                                            <a href="javascript:;" class="j-ctrl ctrl minus disabled"><span class="horizontal"></span></a>
+                                            <input type="text" value="1" maxlength="10" autocomplete="off">
+                                            <a href="javascript:;" class="ctrl j-ctrl plus "><span class="horizontal"></span><span class="vertical"></span></a>
+                                        </div>
+                                        <div class="text-wrap">
+                                            <span class="left-budget">{$deal.total_count - $deal.buy_count}</span>
+                                            <span class="err-wrap j-err-wrap"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item-buy-area">
+                                    <div style="float:left" class="static-hook-real static-hook-id-12">
+                                        <a href="{:url('order/index',['id'=>$deal.id])}" class="btn-buy btn-buy-qrnew j-btn-buy btn-hit">立即抢购</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="p-item-info-more">
+            <div class="iim-wrapper">
+                <div class="spec-nav ">
+                    <div class="nav-bar"></div>
+                    <div class="w-spec-nav" style="position: static; top: auto; z-index: auto;">
+                        <ul class="sn-list">
+                            <li class="spec-nav-current">
+                                <i></i><a><span>本单详情</span></a>
+                            </li>
+                            <li class="">
+                                <i></i><a><span>消费提示</span></a>
+                            </li>
+                            <li class="">
+                                <i></i><a><span>商家介绍</span></a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+                <ul class="j-info-all">
+                    <li class="tab">
+                        <div class="ia-shop-branch">
+                            <div class="w-shop-branch">
+                                <h3 class="w-section-header">分店信息</h3>
+                                <div class="branch-content">
+                                    <div class="shop-map">
+                                        <div class="w-map">
+                                            <div class="map-container">
+
+                                                <img src="{:url('api/map/get_image_detail_xy',['xpoint'=>'121.54610035743','ypoint'=>'38.893178779642'])}" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="branch-detail">
+                                        <div>
+
+                                            <div class="branch-list-content">
+                                                <div class="w-branch-list">
+                                                    <ul class="branch-list-content">
+                                                        {volist name="locations" id="vo"}
+                                                        <!--模板引擎-->
+                                                        <li class="branch {if $i==1}branch-open{/else}branch-close{/if}">
+                                                            <a href="#">{$vo.name}</a>
+                                                            <p class="branch-address">{$vo.address}</p>
+                                                            <p class="branch-tel">{$vo.tel}</p>
+
+                                                        </li>
+                                                        {/volist}
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ifram">本单详情（此处高度随着填充的内容自动变化）</div>
+                    </li>
+                    <li class="tab"><div class="ifram">消费提示（此处高度随着填充的内容自动变化）</div></li>
+                    <li class="tab"><div class="ifram">商家介绍（此处高度随着填充的内容自动变化）</div></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-content">
+        <div class="copyright-info">
+            <div class="site-info">
+                
+            </div>
+            <div class="icons">
+                
+            </div>
+            <div style="width:200px;margin:0 auto; padding:20px 0;">
+               
+            </div>
+        </div>
+    </div>
+{include file="public/footer" /}
+
+    <script>
+        //校验正整数
+        function isNaN(number){
+            var reg = /^[1-9]\d*$/;
+            return reg.test(number);
+        }
+
+        function inputChange(num){
+            if(!isNaN(num)){
+                $(".buycount-ctrl input").val("1");
+            }
+            else{
+                $(".buycount-ctrl input").val(num);
+                if(num == 1){
+                    $(".buycount-ctrl a").eq(0).addClass("disabled");
+                }
+                else{
+                    $(".buycount-ctrl a").eq(0).removeClass("disabled");
+                }
+            }
+        }
+
+        $(".buycount-ctrl input").keyup(function(){
+            var num = $(".buycount-ctrl input").val();
+            inputChange(num);
+        });
+        $(".minus").click(function(){
+            var num = $(".buycount-ctrl input").val();
+            num--;
+            inputChange(num);
+        });
+        $(".plus").click(function(){
+            var num = $(".buycount-ctrl input").val();
+            num++;
+            inputChange(num);
+        });
+
+        
+
+        $(".sn-list li").click(function(){
+            var index = $(".sn-list li").index(this)
+            $(".sn-list li").removeClass("spec-nav-current");
+            $(".j-info-all .tab").css({display: "none"});
+            $(this).addClass("spec-nav-current");
+            $(".j-info-all .tab").eq(index).css({display: "block"});
+        });
+
+        $(".branch").mouseenter(function(){
+            $(".branch").removeClass("branch-open").addClass("branch-close");
+            $(this).removeClass("branch-close").addClass("branch-open");
+        });
+    </script>
+<!--设置团购倒计时-->
+<script>
+    //获取到deal的开始和结束时间,得到的是十位的整数时间戳(13位的毫秒)
+    var start_time = parseInt('{$deal.start_time}') * 1000;
+    var end_time = parseInt('{$deal.end_time}') * 1000;
+//    var_dump(end_time);
+    //设置一个定时器
+    var timer = setInterval(function () {
+
+        var date = new Date();
+        if (start_time < date.getTime()){
+            //date.getTime是相对时间,相对于数据库表里的时间
+            //正在团购或已经结束
+            if (end_time > date.getTime()){
+                //正在团购
+                $('.time-title').html('团购正在进行中:');
+                $('.jx-timerbox').html(getTimeString(end_time - date.getTime()));
+            }
+            else {
+                //团购结束
+                $('.time-title').html('团购已经结束!');
+                $('.jx-timerbox').html();
+            }
+        }
+        else {
+            //没开始
+            $('.time-title').html('团购未开始:');
+            $('.jx-timerbox').html(getTimeString(start_time - date.getTime()));
+
+        }
+    },1000);
+
+    //根据时间戳计算时分秒  js里所有数字都是小数
+    function getTimeString(num) {
+        var seconds = parseInt(num / 1000);
+        var hours = parseInt(seconds / 3600);
+        var minutes = parseInt(seconds % 3600 / 60);
+        var seconds_2 = parseInt(seconds % 60 );
+        return hours + '小时' + minutes + '分钟' + seconds_2 + '秒';
+    }
+
+
+</script>
+</body>
+</html>
